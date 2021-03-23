@@ -90,7 +90,8 @@ If a third onsite requirement is scheduled in between the original two, the trav
 > ![Screenshot of scheduling an onsite booking between two onsite requirements](../../field-service/media/scheduling-schedule-board-2-onsite-bookings-add-3rd.png)
 
 > [!NOTE]
-> When updates (like in the preceding screenshot) take place, the booking start and end times are not cascaded for the rest of the day, as is evident by the overlap. Only the travel times and distances are updated. To ensure that the remaining bookings cascade, correct overlapping times, and fit inside working hours after changes, organizations should consider using Resource Schedule Optimization (RSO).
+> - When updates (like in the preceding screenshot) take place, the booking start and end times are not cascaded for the rest of the day, as is evident by the overlap. Only the travel times and distances are updated. To ensure that the remaining bookings cascade, correct overlapping times, and fit inside working hours after changes, organizations should consider using Resource Schedule Optimization (RSO).
+ 
 
 
 For more information on the **Auto Update Booking Travel** feature, see the additional notes section of this article.
@@ -217,6 +218,8 @@ The Auto Update Booking Travel feature for manual scheduling needs two locations
 Here are a few more notes about the Auto Update Booking Travel feature:
 
 - The feature cannot be enabled or disabled based on specific users, schedule board tabs, or specific schedulable entities. 
+
+- If Technicians are required to create Bookings on their Field Service Mobile app, and you want to enable this feature to auto-calcualte the travel time and distance, a field on the Booking form called **msdyn_ursinternalflags** needs to be set to **{"AutoUpdateBookingTravel":true}**. Once the Booking is created on the Mobile app, the travel time will be calculated. 
 
 - The feature only applies to the Hours view of the schedule board, and travel time and distances are not updated if the bookable resource booking form is edited manually, edited with a workflow, or if the bookings are imported.
 
